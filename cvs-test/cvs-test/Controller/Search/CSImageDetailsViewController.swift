@@ -40,6 +40,7 @@ class CSImageDetailsViewController: UIViewController {
         imageView.sd_setImage(with: selectedImage?.imageUrl, placeholderImage: nil)
     }
     
+    // TODO :: Can be parse with Regex
     private func parse(using key: String) -> String {
         guard let description = selectedImage?.description
         else {

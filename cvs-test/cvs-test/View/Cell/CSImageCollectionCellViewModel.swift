@@ -34,6 +34,7 @@ struct CSImageCollectionCellViewModel {
         return nil
     }
     
+    // TODO :: Can be parse with Regex
     var author: String {
         let values = image.author.components(separatedBy: "\"")
         return values.count == 3 ? image.author.components(separatedBy: "\"")[1] : image.author
