@@ -36,7 +36,7 @@ class CSImageDetailsViewController: UIViewController {
     }
     
     private func loadImage() {
-        imageView.sd_setImage(with: selectedImage?.imageUrl, placeholderImage: UIImage(named: "placeholder"))
+        imageView.sd_setImage(with: selectedImage?.imageUrl, placeholderImage: nil)
     }
     
     private func parseWidth() -> String {
