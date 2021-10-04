@@ -29,7 +29,8 @@ class CSImageDetailsViewController: UIViewController {
             data = [
                 "Title:\t\t \(image.title)",
                 "Author:\t\t \(image.author)",
-                "Width:\t\t \(parseWidth())"
+                "Width:\t\t \(parse(using: "width=\""))",
+                "Height:\t\t \(parse(using: "height=\""))"
             ]
             detailsTableView.reloadData()
         }
@@ -39,8 +40,16 @@ class CSImageDetailsViewController: UIViewController {
         imageView.sd_setImage(with: selectedImage?.imageUrl, placeholderImage: nil)
     }
     
-    private func parseWidth() -> String {
-        return "240"
+    private func parse(using key: String) -> String {
+        guard let description = selectedImage?.description
+        else {
+            return "-"
+        }
+        let values = description.components(separatedBy: key)
+        if values.count > 0, let width = values[1].components(separatedBy: "\"").first {
+            return width
+        }
+        return "-"
     }
 }
 
@@ -51,7 +60,7 @@ extension CSImageDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellKey.detailsTableCell, for: indexPath)
         cell.textLabel?.text = data[indexPath.row]
         return cell
     }

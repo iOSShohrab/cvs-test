@@ -35,13 +35,8 @@ struct CSImageCollectionCellViewModel {
     }
     
     var author: String {
-        if let spaceIndex = image.author.firstIndex(of: " ") {
-            let name = String(image.author.suffix(from: spaceIndex))
-            let startIndex = name.index(name.startIndex, offsetBy: 3)
-            let endIndex = name.index(name.endIndex, offsetBy: -2)
-            return String(name[startIndex..<endIndex])
-        }
-        return image.author
+        let values = image.author.components(separatedBy: "\"")
+        return values.count == 3 ? image.author.components(separatedBy: "\"")[1] : image.author
     }
     
     var tags: String {

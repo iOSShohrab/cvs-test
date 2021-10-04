@@ -18,6 +18,7 @@ private struct urls {
 
 struct CellKey {
     static let resultCollectionCell = "ImageCollectionViewCell"
+    static let detailsTableCell = "itemCell"
 }
 
 struct SegueKey {
