@@ -14,7 +14,9 @@ import UIKit
  2. Need to create QUEUE base network service call to handle multiple server request async
  3. Need to add a Logger to Log only Debug mode
  4. Can replace third party SDK SDWebImage and implement own image cache engine
- 
+ 5. SSL pinnng can be use for security
+ 6. Data Cache requires to improve performance
+ 7. 
  */
 
 
