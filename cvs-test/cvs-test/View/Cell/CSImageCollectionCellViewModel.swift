@@ -23,6 +23,10 @@ struct CSImageCollectionCellViewModel {
         return image.dateTaken
     }
     
+    var description: String {
+        return image.description
+    }
+    
     var imageUrl: URL? {
         if let urlString = image.media["m"] {
             return URL.init(string: urlString)

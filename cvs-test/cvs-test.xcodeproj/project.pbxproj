@@ -26,6 +26,9 @@
 		18300983270A9B7F00142913 /* CSServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18300982270A9B7F00142913 /* CSServiceError.swift */; };
 		18300989270A9CD000142913 /* CSConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18300988270A9CD000142913 /* CSConstant.swift */; };
 		18300991270AA4B000142913 /* CSWebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18300990270AA4B000142913 /* CSWebServiceClient.swift */; };
+		18300996270AAA1C00142913 /* CSSearchResultViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18300995270AAA1C00142913 /* CSSearchResultViewModelTests.swift */; };
+		1830099B270AAA9000142913 /* mockdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 1830099A270AAA9000142913 /* mockdata.json */; };
+		183009A5270AACCA00142913 /* CSImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183009A4270AACCA00142913 /* CSImageDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		18300982270A9B7F00142913 /* CSServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSServiceError.swift; sourceTree = "<group>"; };
 		18300988270A9CD000142913 /* CSConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSConstant.swift; sourceTree = "<group>"; };
 		18300990270AA4B000142913 /* CSWebServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSWebServiceClient.swift; sourceTree = "<group>"; };
+		18300995270AAA1C00142913 /* CSSearchResultViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSSearchResultViewModelTests.swift; sourceTree = "<group>"; };
+		1830099A270AAA9000142913 /* mockdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockdata.json; sourceTree = "<group>"; };
+		183009A4270AACCA00142913 /* CSImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSImageDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +146,10 @@
 		18300928270A93F100142913 /* cvs-testTests */ = {
 			isa = PBXGroup;
 			children = (
+				1830099A270AAA9000142913 /* mockdata.json */,
 				18300929270A93F100142913 /* cvs_testTests.swift */,
 				1830092B270A93F100142913 /* Info.plist */,
+				18300995270AAA1C00142913 /* CSSearchResultViewModelTests.swift */,
 			);
 			path = "cvs-testTests";
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				18300950270A96D400142913 /* CSImageSearchResultViewController.swift */,
+				183009A4270AACCA00142913 /* CSImageDetailsViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1830099B270AAA9000142913 /* mockdata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +411,7 @@
 				18300991270AA4B000142913 /* CSWebServiceClient.swift in Sources */,
 				18300969270A98D000142913 /* CSImageCollectionCellViewModel.swift in Sources */,
 				18300989270A9CD000142913 /* CSConstant.swift in Sources */,
+				183009A5270AACCA00142913 /* CSImageDetailsViewController.swift in Sources */,
 				18300973270A994700142913 /* CSImageSearchResult.swift in Sources */,
 				18300915270A93F000142913 /* SceneDelegate.swift in Sources */,
 				18300961270A979600142913 /* CSImageCollectionViewCell.swift in Sources */,
@@ -413,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1830092A270A93F100142913 /* cvs_testTests.swift in Sources */,
+				18300996270AAA1C00142913 /* CSSearchResultViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

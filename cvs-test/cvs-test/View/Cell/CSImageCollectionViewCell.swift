@@ -23,8 +23,8 @@ class CSImageCollectionViewCell: UICollectionViewCell {
     func updateView() {
         imageView.sd_setImage(with: viewModel?.imageUrl, placeholderImage: UIImage(named: "placeholder"))
         titleLabel.text = viewModel?.title
-        titleLabel.sizeToFit()
         authorLabel.text = viewModel?.author
+        titleLabel.sizeToFit()
         authorLabel.sizeToFit()
     }
 }

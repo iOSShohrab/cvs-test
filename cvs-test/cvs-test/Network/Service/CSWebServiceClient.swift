@@ -11,7 +11,7 @@ import Foundation
  TODO ::
  
  1. Need to create queue base network service call to handle multiple server request async
- 2.
+ 2. Need to add a Logger to Log only Debug mode
  */
 
 struct CSWebServiceClient : CSWebService {
