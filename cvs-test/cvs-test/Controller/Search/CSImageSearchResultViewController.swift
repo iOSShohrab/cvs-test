@@ -13,9 +13,7 @@ class CSImageSearchResultViewController: UIViewController {
     
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     let searchController = UISearchController()
-    
     var viewModel: CSSearchResultViewModel?
-    
     var selectedImage: CSImageCollectionCellViewModel?
 
     override func viewDidLoad() {
@@ -30,7 +28,6 @@ class CSImageSearchResultViewController: UIViewController {
         if segue.identifier == SegueKey.imageDetails,
            let imageDetailsController = segue.destination as? CSImageDetailsViewController {
             imageDetailsController.selectedImage = selectedImage
-            
           }
     }
 
