@@ -24,6 +24,7 @@ class CSImageDetailsViewController: UIViewController {
         loadImage()
     }
     
+    // TODO :: This is for showing purpose. This needs to create separate viewModel. As this is simple things kept in same class
     private func populateData() {
         if let image = selectedImage {
             data = [
