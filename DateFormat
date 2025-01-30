@@ -1,0 +1,71 @@
+import Foundation
+
+extension Date {
+
+    func to12HourFormat(timeZone: TimeZone? = .current) -> Date? {
+        let df = DateFormatter()
+        df.dateFormat = "hh:mm a"
+        df.timeZone = timeZone
+        guard let timeStr = df.string(from: self), let d = df.date(from: timeStr) else { return nil }
+        let cal = Calendar.current
+        var comps = cal.dateComponents([.year, .month, .day], from: self)
+        let reconComps = cal.dateComponents([.hour, .minute], from: d)
+        comps.hour = reconComps.hour; comps.minute = reconComps.minute
+        return cal.date(from: comps)
+    }
+
+    func to24HourFormat(timeZone: TimeZone? = .current) -> Date? {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        df.timeZone = timeZone
+
+        let cal = Calendar.current
+        var comps = cal.dateComponents([.year, .month, .day, .hour, .minute], from: self) // Get all components
+
+        guard let timeStr = df.string(from: self), let d = df.date(from: timeStr) else { return nil }
+
+        let reconComps = cal.dateComponents([.hour, .minute], from: d)
+        comps.hour = reconComps.hour
+        comps.minute = reconComps.minute
+
+        return cal.date(from: comps)
+    }
+}
+
+
+// Example Usage:
+
+let dateFormatter24 = DateFormatter()
+dateFormatter24.dateFormat = "yyyy-MM-dd HH:mm"
+dateFormatter24.timeZone = TimeZone(identifier: "Asia/Dhaka")
+
+if let date24 = dateFormatter24.date(from: "2024-07-20 14:30") { //2:30 PM Dhaka
+    if let date12 = date24.to12HourFormat() {
+        let df = DateFormatter()
+        df.timeStyle = .medium
+        df.timeZone = TimeZone(identifier: "Asia/Dhaka")
+        print("12-hour format: \(df.string(from: date12))") // Output: 02:30:00 PM
+    }
+
+    if let backTo24 = date24.to24HourFormat() {
+       let df = DateFormatter()
+       df.timeStyle = .medium
+       df.timeZone = TimeZone(identifier: "Asia/Dhaka")
+       print("Back to 24-hour format: \(df.string(from: backTo24))") // Output: 14:30:00
+    }
+
+}
+
+
+let now = Date()
+if let now12 = now.to12HourFormat() {
+    let df = DateFormatter()
+    df.timeStyle = .medium
+    print("Current time in 12-hour format: \(df.string(from: now12))")
+}
+
+if let now24 = now.to24HourFormat() {
+    let df = DateFormatter()
+    df.timeStyle = .medium
+    print("Current time in 24-hour format: \(df.string(from: now24))")
+}
